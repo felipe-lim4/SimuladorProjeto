@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --color-yellow:#FFC727;
+    --color-font:#1E1E1E;
+    --color-input:#ADADAD;
+    --color-white:#FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.primary{
+    background-image: url("./assets/imagemm.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    /*background: linear-gradient(to bottom right, #ff9900, #ffc727,#ff9900);*/
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    display:flex;
+    align-items: center;
+    gap: 50px;
+    padding: 0% 15%;
+}
+
+.container__calculo{
+    gap: 0.5rem;
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 421px;
+    height: auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: 800;
+
+}
+
+.subtitle{
+    font-size: 1rem;
+}
+
+.text{
+    font-size: 0.75rem;
+}
+.image{
+    height: 20rem;
+    width: 100%;
+}
+
+.input{
+    height: 2rem;
+    padding: 0.25rem;
+    border: 2px solid var(--color-input);
+    border-radius: 0.25rem;
+    outline: none;
+}
+
+.button{
+    height: 2.5rem;
+    padding: 0.5rem;
+    color: var(--color-white);
+    background: var(--color-yellow);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+}
+
+.button:hover{
+    background: #eec145;
+}
+
+.container__resultado{
+    gap: 0.5rem;
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 716px;
+    height: auto;
+    border-radius: 20px;
+    text-align: left;
+}
+.no__results{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    align-items:center ;
+}
+
+@media (max-width: 1200px){
+    .primary{
+        flex-direction: column;
+        padding: 15% 15%;
+        height: auto;
+    }
+    .container__calculo{
+        width: 100%;
+    }
+    .container__resultado{
+        width: 100%;
+    }
+    
+}
+
+
+

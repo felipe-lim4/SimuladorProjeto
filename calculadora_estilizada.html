@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="primary">
+
+    <div class="container__calculo">
+        <h1 class="title">Calcule sua Perda</h1>
+
+        <input type="number" id="input_qtd_colmeia" placeholder="Digite a quantidade de colmeias" class="input">
+
+        <input type="number" id="input_producao_ano" placeholder="Digite sua produção anual | KG" class="input">
+
+        <input type="number" id="input_preco" placeholder="Digite o preço de venda | R$/KG" class="input">
+
+        <button onclick="calculaPerda()" class="button">
+            Ver resultado
+        </button>
+    </div>
+
+    <div class="container__resultado" id="div_respostas">
+        <div class="no__results">
+            <h1 class="title">Informe os parâmetros do cálculo</h1>
+            <img  class="image" src="./assets/noresults.svg" alt="imagem procurando dados">
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function calculaPerda(){
+        var preco = Number(input_preco.value)
+        var producao = Number(input_producao_ano.value)
+        var qtdColmeia = Number(input_qtd_colmeia.value)
+
+        var mediaColmeiaAno = producao/qtdColmeia
+
+        // perda de em kilos de acordo com a perda de 28% do rendimento por colmeia
+        var perdaKilosPorColmeia = mediaColmeiaAno * 0.28
+
+        // perda total (no geral)
+        var perdaTotalKilos = perdaKilosPorColmeia * qtdColmeia 
+
+        // calculo da perda do lucro cessante com base no preço médio de revenda (R$50,00) POR COLMÉIA!!!!!!!!!!
+        var lucroCessanteAno  = perdaTotalKilos * preco
+
+
+        div_respostas.innerHTML = `<h1 class="title">Seus resultados</h1>
+    <p class="text">De acordo com a estatística de que o descontrole de temperatura pode causar uma redução de até 28% na produção, segue os dados:</p>
+
+    <p class="text"><strong>Produção perdida:</strong> Aproximadamente ${perdaKilosPorColmeia} Kg por colmeia.</p>
+
+    <p class="text"><strong>Perda Anual Total:</strong> No ano, você teve uma perda total de ${perdaTotalKilos} Kg</p>
+
+    <p class="text"><strong>Lucro Cessante:</strong> Cerca de R$${lucroCessanteAno} de lucro cessante , considerando a produção reduzida.</p>
+
+    <h2 class="subtitle">Solução com Sistema de Sensores</h2>
+    <ul>    
+        <li class="text"> Ganho de produção.</li>
+        <li class="text"> Avanço na qualidade do mel.</li>
+        <li class="text"> Prolongamento da vida útil das abelhas.</li>
+        <li class="text"> Garantia de um produto de maior qualidade.</li>
+    </ul> 
+`
+
+    }
+</script>
